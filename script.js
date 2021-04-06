@@ -19,9 +19,9 @@ async function getWeatherData(inputValue, apiKey) {
   const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputValue.value} 
     &appid=${apiKey}
 `);
-  if (!response) {
-    alert("Error, try again");
-  }
   const data = await response.json();
+  if (data.cod == 404) {
+    alert("Error, Try another city");
+  }
   return data;
 }
