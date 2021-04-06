@@ -9,10 +9,10 @@ submitBtn.addEventListener("click", async () => {
   let tempValue = data["main"]["temp"];
   let fconvert = Math.floor(((tempValue - 273.15) * 9) / 5 + 32);
   let answer;
-  fconvert < 70
+  fconvert < 65
     ? (answer = "Better grab that 🧥!")
     : (answer = "No need for a 🧥");
-  degress.innerHTML = `Looks like it is gonna be ${fconvert} degress Farenheight! \n ${answer}`;
+  degress.innerHTML = `Looks like it is gonna be ${fconvert} degress Farenheight in ${inputValue.value}! \n ${answer}`;
 });
 
 async function getWeatherData(inputValue, apiKey) {
